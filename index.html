@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nizar Karroud | Software Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#050505',
+                        'magic-purple': '#A855F7', /* Neon Purple Accent */
+                        'glow-green': '#10B981',   /* Neon Green Accent */
+                        'card-bg': '#1e293b',      /* Slate-800 */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base styles */
+        body {
+            background-color: #050505;
+            overflow-x: hidden; 
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Text Glowing Effect */
+        .hero-title-shadow {
+            text-shadow: 0 0 5px rgba(168, 85, 247, 0.4), 0 0 15px rgba(168, 85, 247, 0.2);
+        }
+        
+        /* Sticky Header for Navigation */
+        .sticky-header {
+            background-color: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 50;
+            top: 0;
+            position: sticky;
+        }
+
+        /* Card Styling */
+        .scroll-card {
+            background-color: #1e293b; 
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-bg text-gray-200 font-sans">
+    
+    <!-- Navigation Header (Sticky) -->
+    <header class="sticky-header py-4 border-b border-gray-700/50">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-wider text-magic-purple">
+                NIZAR<span class="text-gray-200"> KARROUD</span>
+            </h1>
+            <nav class="space-x-4 sm:space-x-6 text-lg font-medium">
+                <a href="#projects" class="text-gray-300 hover:text-glow-green transition duration-300">Projects</a>
+                <a href="#about" class="text-gray-300 hover:text-glow-green transition duration-300 hidden sm:inline">About</a>
+                <a href="#contact" class="text-magic-purple border border-magic-purple py-1 px-4 rounded-full hover:bg-magic-purple hover:text-dark-bg transition duration-300">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION (Static Landing) -->
+    <section id="hero" class="min-h-[90vh] flex items-center justify-center text-center bg-dark-bg px-6">
+        <div class="max-w-5xl py-20">
+            <p class="text-sm font-medium tracking-widest mb-4 uppercase text-glow-green">WELCOME TO THE PORTFOLIO</p>
+            
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-snug text-white max-w-4xl mx-auto mb-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="text-magic-purple hero-title-shadow">Sed do eiusmod tempor</span> incididunt ut labore et dolore.
+            </h2>
+
+            <div class="space-x-4">
+                <a href="#projects" class="inline-block py-3 px-8 text-xl font-bold rounded-full bg-magic-purple text-dark-bg hover:bg-magic-purple/80 transition duration-300 shadow-xl shadow-magic-purple/50">
+                    View Projects <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. PORTFOLIO CONTENT -->
+    <main class="py-16">
+        <div class="container mx-auto px-6 lg:px-8">
+            
+            <!-- About Me Section -->
+            <section id="about" class="py-20">
+                <h3 class="text-3xl sm:text-4xl font-bold mb-12 text-magic-purple">
+                    <span class="text-gray-500">//</span> About Nizar
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="text-lg text-gray-400 space-y-6">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <p>
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                    <!-- Profile Placeholder (Skills/Summary) -->
+                    <div class="scroll-card p-6 shadow-xl flex flex-col justify-between">
+                        <h4 class="text-xl font-semibold text-white mb-4">Core Focus: Skills & Technologies</h4>
+                        <ul class="text-gray-400 space-y-3 list-disc list-inside">
+                            <li><span class="text-magic-purple font-semibold">Languages:</span> Lorem, Ipsum, Dolor, Sit, Amet</li>
+                            <li><span class="text-magic-purple font-semibold">Systems:</span> Consectetur, Adipiscing, Elit, Sed, Do</li>
+                            <li><span class="text-magic-purple font-semibold">DevOps:</span> Eiusmod, Tempor, Incididunt, Ut, Labore</li>
+                        </ul>
+                        <a href="#" class="mt-4 text-glow-green hover:underline text-sm font-medium">
+                            Download Resume <i class="fas fa-file-alt ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="py-20 border-t border-gray-700/50">
+                <h3 class="text-3xl sm:text-4xl font-bold mb-12 text-magic-purple">
+                    <span class="text-gray-500">//</span> Featured Projects
+                </h3>
+                <div class="space-y-10">
+                    
+                    <!-- Project 1 -->
+                    <div class="scroll-card p-6 shadow-xl hover:shadow-magic-purple/30 transition duration-300">
+                        <h4 class="text-2xl font-bold text-white mb-2">Project Title Alpha (Rust)</h4>
+                        <p class="text-sm uppercase text-glow-green font-medium mb-3">Lorem, Ipsum, Dolor, Sit</p>
+                        <p class="text-gray-400 mb-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <div class="space-x-4">
+                            <a href="#" class="text-magic-purple hover:text-white transition duration-200"><i class="fas fa-code mr-1"></i> Source Code</a>
+                            <a href="#" class="text-magic-purple hover:text-white transition duration-200"><i class="fas fa-play-circle mr-1"></i> Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="scroll-card p-6 shadow-xl hover:shadow-magic-purple/30 transition duration-300">
+                        <h4 class="text-2xl font-bold text-white mb-2">Project Title Beta (Go)</h4>
+                        <p class="text-sm uppercase text-glow-green font-medium mb-3">Consectetur, Adipiscing, Elit, Sed</p>
+                        <p class="text-gray-400 mb-4">
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet.
+                        </p>
+                        <div class="space-x-4">
+                            <a href="#" class="text-magic-purple hover:text-white transition duration-200"><i class="fas fa-code mr-1"></i> Source Code</a>
+                            <a href="#" class="text-magic-purple hover:text-white transition duration-200"><i class="fas fa-play-circle mr-1"></i> Live Site</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-20 border-t border-gray-700/50">
+                <h3 class="text-3xl sm:text-4xl font-bold mb-12 text-magic-purple text-center">
+                    <span class="text-gray-500">//</span> Get in Touch
+                </h3>
+                <div class="max-w-xl mx-auto">
+                    <p class="text-center text-lg text-gray-400 mb-8">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                    </p>
+                    
+                    <form class="space-y-6 scroll-card p-8 shadow-2xl">
+                        
+                        <div id="form-message" class="hidden p-4 rounded-lg text-center font-bold transition duration-300"></div>
+
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-magic-purple mb-1">Name</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full p-3 rounded-md border border-gray-600 bg-dark-bg text-white focus:ring-2 focus:ring-magic-purple focus:border-magic-purple transition duration-200">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-magic-purple mb-1">Email</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full p-3 rounded-md border border-gray-600 bg-dark-bg text-white focus:ring-2 focus:ring-magic-purple focus:border-magic-purple transition duration-200">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-magic-purple mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full p-3 rounded-md border border-gray-600 bg-dark-bg text-white focus:ring-2 focus:ring-magic-purple focus:border-magic-purple transition duration-200"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-3 px-8 text-lg font-bold rounded-full bg-magic-purple text-dark-bg hover:bg-magic-purple/80 transition duration-300 shadow-lg shadow-magic-purple/30">
+                            SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer and Social Links -->
+    <footer class="mt-16 py-8 border-t border-gray-700/50 text-center text-gray-500 text-sm bg-dark-bg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center space-x-6 text-2xl mb-4">
+                <a href="#" class="text-gray-400 hover:text-magic-purple transition duration-300"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-magic-purple transition duration-300"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-magic-purple transition duration-300"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>Designed and built by Nizar Karroud. &copy; 2025</p>
+        </div>
+    </footer>
+
+</body>
+</html>
