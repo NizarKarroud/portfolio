@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nizar Karroud | Software Engineer</title>
+    <title>NIZAR KARROUD | // ACCESS GRANTED</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Pixel Font: Press Start 2P -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
@@ -15,13 +16,14 @@
             theme: {
                 extend: {
                     colors: {
-                        'dark-bg': '#050505',
+                        'dark-bg': '#000000',      /* True Black for Terminal */
                         'magic-purple': '#A855F7', /* Neon Purple Accent */
                         'glow-green': '#10B981',   /* Neon Green Accent */
-                        'card-bg': '#1e293b',      /* Slate-800 */
+                        'terminal-text': '#D1D5DB', /* Fluorescent Gray */
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        pixel: ['"Press Start 2P"', 'cursive'], /* New Pixel Font */
                     }
                 }
             }
@@ -29,65 +31,89 @@
     </script>
 
     <style>
-        /* Base styles */
+        /* BASE STYLES & FONTS */
         body {
-            background-color: #050505;
+            background-color: #000000;
             overflow-x: hidden; 
             scroll-behavior: smooth;
+            /* Use a legible fallback for smaller text */
+            font-family: 'Inter', sans-serif; 
         }
 
-        /* Hero Text Glowing Effect */
-        .hero-title-shadow {
-            text-shadow: 0 0 5px rgba(168, 85, 247, 0.4), 0 0 15px rgba(168, 85, 247, 0.2);
+        h1, h2, h3, h4, .pixel-text {
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        /* NEON GLOW EFFECTS */
+        .text-shadow-purple {
+            text-shadow: 0 0 4px #A855F7, 0 0 10px rgba(168, 85, 247, 0.5);
+        }
+        .text-shadow-green {
+            text-shadow: 0 0 4px #10B981, 0 0 10px rgba(16, 185, 129, 0.5);
+        }
+
+        /* CARD/WINDOW STYLING */
+        .terminal-window {
+            background-color: rgba(16, 16, 16, 0.9); /* Slightly off black, transparent */
+            border: 2px solid #A855F7;
+            border-radius: 0; /* Sharp corners */
+            box-shadow: 
+                0 0 10px rgba(168, 85, 247, 0.5), /* Inner purple glow */
+                0 0 15px rgba(0, 0, 0, 0.8) inset; /* Dark inner shadow */
         }
         
-        /* Sticky Header for Navigation */
+        /* BUTTON STYLING */
+        .terminal-button {
+            border: 2px solid #10B981;
+            box-shadow: 0 0 8px #10B981; /* Green glow */
+            transition: all 0.1s ease-in-out;
+        }
+        .terminal-button:hover {
+            box-shadow: 0 0 15px #10B981, 0 0 25px rgba(16, 185, 129, 0.8);
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+
+        /* HEADER STYLING */
         .sticky-header {
-            background-color: rgba(5, 5, 5, 0.95);
-            backdrop-filter: blur(8px);
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(4px);
             z-index: 50;
             top: 0;
             position: sticky;
-        }
-
-        /* Card Styling */
-        .scroll-card {
-            background-color: #1e293b; 
-            border: 1px solid rgba(168, 85, 247, 0.3);
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            border-bottom: 2px solid #A855F7;
         }
     </style>
 </head>
 
-<body class="bg-dark-bg text-gray-200 font-sans">
+<body class="bg-dark-bg text-terminal-text font-sans">
     
     <!-- Navigation Header (Sticky) -->
-    <header class="sticky-header py-4 border-b border-gray-700/50">
+    <header class="sticky-header py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-wider text-magic-purple">
-                NIZAR<span class="text-gray-200"> KARROUD</span>
+            <h1 class="text-lg sm:text-xl font-pixel tracking-wider text-magic-purple text-shadow-purple">
+                NIZAR KARROUD
             </h1>
-            <nav class="space-x-4 sm:space-x-6 text-lg font-medium">
-                <a href="#projects" class="text-gray-300 hover:text-glow-green transition duration-300">Projects</a>
-                <a href="#about" class="text-gray-300 hover:text-glow-green transition duration-300 hidden sm:inline">About</a>
-                <a href="#contact" class="text-magic-purple border border-magic-purple py-1 px-4 rounded-full hover:bg-magic-purple hover:text-dark-bg transition duration-300">Contact</a>
+            <nav class="space-x-4 sm:space-x-6 text-base font-pixel">
+                <a href="#projects" class="text-glow-green hover:text-white transition duration-200 text-shadow-green">PROJECT</a>
+                <a href="#about" class="text-glow-green hover:text-white transition duration-200 hidden sm:inline text-shadow-green">ABOUT</a>
+                <a href="#contact" class="px-3 py-1 terminal-button text-dark-bg bg-glow-green text-shadow-green text-sm">CONTACT</a>
             </nav>
         </div>
     </header>
 
-    <!-- 1. HERO SECTION (Static Landing) -->
-    <section id="hero" class="min-h-[90vh] flex items-center justify-center text-center bg-dark-bg px-6">
+    <!-- 1. HERO SECTION (SYSTEM LOAD) -->
+    <section id="hero" class="min-h-[90vh] flex items-center justify-center text-center bg-dark-bg px-6 border-b border-glow-green/50">
         <div class="max-w-5xl py-20">
-            <p class="text-sm font-medium tracking-widest mb-4 uppercase text-glow-green">WELCOME TO THE PORTFOLIO</p>
+            <p class="text-sm font-pixel tracking-widest mb-4 uppercase text-glow-green text-shadow-green">>> DATA_STREAM: INITIATED</p>
             
-            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-snug text-white max-w-4xl mx-auto mb-10">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="text-magic-purple hero-title-shadow">Sed do eiusmod tempor</span> incididunt ut labore et dolore.
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-pixel leading-snug text-magic-purple text-shadow-purple max-w-4xl mx-auto mb-10">
+                LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.
             </h2>
 
             <div class="space-x-4">
-                <a href="#projects" class="inline-block py-3 px-8 text-xl font-bold rounded-full bg-magic-purple text-dark-bg hover:bg-magic-purple/80 transition duration-300 shadow-xl shadow-magic-purple/50">
-                    View Projects <i class="fas fa-arrow-down ml-2"></i>
+                <a href="#projects" class="inline-block py-3 px-8 text-lg font-pixel rounded-none text-dark-bg bg-magic-purple terminal-button shadow-magic-purple/50">
+                    >> BEGIN SCAN <i class="fas fa-arrow-down ml-2"></i>
                 </a>
             </div>
         </div>
@@ -99,11 +125,11 @@
             
             <!-- About Me Section -->
             <section id="about" class="py-20">
-                <h3 class="text-3xl sm:text-4xl font-bold mb-12 text-magic-purple">
-                    <span class="text-gray-500">//</span> About Nizar
+                <h3 class="text-2xl sm:text-3xl font-pixel mb-12 text-magic-purple text-shadow-purple">
+                    <span class="text-glow-green">//</span> ABOUT [USER]
                 </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="text-lg text-gray-400 space-y-6">
+                    <div class="text-base text-terminal-text space-y-6">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </p>
@@ -112,87 +138,85 @@
                         </p>
                     </div>
                     <!-- Profile Placeholder (Skills/Summary) -->
-                    <div class="scroll-card p-6 shadow-xl flex flex-col justify-between">
-                        <h4 class="text-xl font-semibold text-white mb-4">Core Focus: Skills & Technologies</h4>
-                        <ul class="text-gray-400 space-y-3 list-disc list-inside">
-                            <li><span class="text-magic-purple font-semibold">Languages:</span> Lorem, Ipsum, Dolor, Sit, Amet</li>
-                            <li><span class="text-magic-purple font-semibold">Systems:</span> Consectetur, Adipiscing, Elit, Sed, Do</li>
-                            <li><span class="text-magic-purple font-semibold">DevOps:</span> Eiusmod, Tempor, Incididunt, Ut, Labore</li>
+                    <div class="terminal-window p-6">
+                        <h4 class="text-lg font-pixel text-glow-green mb-4 text-shadow-green">FOCUS: SKILLS & TECH</h4>
+                        <ul class="text-terminal-text text-sm space-y-3 list-disc list-inside ml-4">
+                            <li><span class="text-magic-purple font-pixel">LANGS:</span> LOREM, IPSUM, DOLOR, SIT, AMET</li>
+                            <li><span class="text-magic-purple font-pixel">SYSTEMS:</span> CONSECTETUR, ADIPISCING, ELIT, SED, DO</li>
+                            <li><span class="text-magic-purple font-pixel">DEVOPS:</span> EIUSMOD, TEMPOR, INCIDIDUNT, UT, LABORE</li>
                         </ul>
-                        <a href="#" class="mt-4 text-glow-green hover:underline text-sm font-medium">
-                            Download Resume <i class="fas fa-file-alt ml-1"></i>
+                        <a href="#" class="mt-6 inline-block py-1 px-3 terminal-button text-dark-bg bg-glow-green text-sm font-pixel">
+                            <i class="fas fa-file-alt mr-1"></i> Download CV (PDF)
                         </a>
                     </div>
                 </div>
             </section>
 
             <!-- Projects Section -->
-            <section id="projects" class="py-20 border-t border-gray-700/50">
-                <h3 class="text-3xl sm:text-4xl font-bold mb-12 text-magic-purple">
-                    <span class="text-gray-500">//</span> Featured Projects
+            <section id="projects" class="py-20 border-t border-magic-purple/50">
+                <h3 class="text-2xl sm:text-3xl font-pixel mb-12 text-magic-purple text-shadow-purple">
+                    <span class="text-glow-green">//</span> PROJECTS [DATA]
                 </h3>
                 <div class="space-y-10">
                     
                     <!-- Project 1 -->
-                    <div class="scroll-card p-6 shadow-xl hover:shadow-magic-purple/30 transition duration-300">
-                        <h4 class="text-2xl font-bold text-white mb-2">Project Title Alpha (Rust)</h4>
-                        <p class="text-sm uppercase text-glow-green font-medium mb-3">Lorem, Ipsum, Dolor, Sit</p>
-                        <p class="text-gray-400 mb-4">
+                    <div class="terminal-window p-6 hover:border-glow-green transition duration-300">
+                        <h4 class="text-xl font-pixel text-glow-green mb-2 text-shadow-green">PROJECT_TITLE_ALPHA.BIN</h4>
+                        <p class="text-xs uppercase text-magic-purple font-pixel mb-3">LOREM, IPSUM, DOLOR, SIT</p>
+                        <p class="text-base text-terminal-text mb-4">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </p>
                         <div class="space-x-4">
-                            <a href="#" class="text-magic-purple hover:text-white transition duration-200"><i class="fas fa-code mr-1"></i> Source Code</a>
-                            <a href="#" class="text-magic-purple hover:text-white transition duration-200"><i class="fas fa-play-circle mr-1"></i> Demo</a>
+                            <a href="#" class="text-magic-purple hover:text-white transition duration-200 font-pixel text-sm"><i class="fas fa-code mr-1"></i> VIEW_CODE</a>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
-                    <div class="scroll-card p-6 shadow-xl hover:shadow-magic-purple/30 transition duration-300">
-                        <h4 class="text-2xl font-bold text-white mb-2">Project Title Beta (Go)</h4>
-                        <p class="text-sm uppercase text-glow-green font-medium mb-3">Consectetur, Adipiscing, Elit, Sed</p>
-                        <p class="text-gray-400 mb-4">
+                    <div class="terminal-window p-6 hover:border-glow-green transition duration-300">
+                        <h4 class="text-xl font-pixel text-glow-green mb-2 text-shadow-green">PROJECT_TITLE_BETA.EXE</h4>
+                        <p class="text-xs uppercase text-magic-purple font-pixel mb-3">CONSECTETUR, ADIPISCING, ELIT, SED</p>
+                        <p class="text-base text-terminal-text mb-4">
                             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet.
                         </p>
                         <div class="space-x-4">
-                            <a href="#" class="text-magic-purple hover:text-white transition duration-200"><i class="fas fa-code mr-1"></i> Source Code</a>
-                            <a href="#" class="text-magic-purple hover:text-white transition duration-200"><i class="fas fa-play-circle mr-1"></i> Live Site</a>
+                            <a href="#" class="text-magic-purple hover:text-white transition duration-200 font-pixel text-sm"><i class="fas fa-code mr-1"></i> VIEW_CODE</a>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Contact Section -->
-            <section id="contact" class="py-20 border-t border-gray-700/50">
-                <h3 class="text-3xl sm:text-4xl font-bold mb-12 text-magic-purple text-center">
-                    <span class="text-gray-500">//</span> Get in Touch
+            <section id="contact" class="py-20 border-t border-magic-purple/50">
+                <h3 class="text-2xl sm:text-3xl font-pixel mb-12 text-magic-purple text-center text-shadow-purple">
+                    <span class="text-glow-green">//</span> CONTACT [COMMENCE_HANDSHAKE]
                 </h3>
                 <div class="max-w-xl mx-auto">
-                    <p class="text-center text-lg text-gray-400 mb-8">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                    <p class="text-center text-base text-terminal-text mb-8">
+                        LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE.
                     </p>
                     
-                    <form class="space-y-6 scroll-card p-8 shadow-2xl">
+                    <form class="space-y-6 terminal-window p-8">
                         
-                        <div id="form-message" class="hidden p-4 rounded-lg text-center font-bold transition duration-300"></div>
+                        <div id="form-message" class="hidden p-4 rounded-lg text-center font-pixel transition duration-300"></div>
 
                         <div>
-                            <label for="name" class="block text-sm font-medium text-magic-purple mb-1">Name</label>
+                            <label for="name" class="block text-sm font-pixel text-magic-purple mb-1">NAME:</label>
                             <input type="text" id="name" name="name" required 
-                                   class="w-full p-3 rounded-md border border-gray-600 bg-dark-bg text-white focus:ring-2 focus:ring-magic-purple focus:border-magic-purple transition duration-200">
+                                   class="w-full p-3 rounded-none border-2 border-magic-purple bg-dark-bg text-terminal-text focus:border-glow-green focus:outline-none transition duration-200 text-base">
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-medium text-magic-purple mb-1">Email</label>
+                            <label for="email" class="block text-sm font-pixel text-magic-purple mb-1">EMAIL:</label>
                             <input type="email" id="email" name="email" required 
-                                   class="w-full p-3 rounded-md border border-gray-600 bg-dark-bg text-white focus:ring-2 focus:ring-magic-purple focus:border-magic-purple transition duration-200">
+                                   class="w-full p-3 rounded-none border-2 border-magic-purple bg-dark-bg text-terminal-text focus:border-glow-green focus:outline-none transition duration-200 text-base">
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-medium text-magic-purple mb-1">Message</label>
+                            <label for="message" class="block text-sm font-pixel text-magic-purple mb-1">MESSAGE:</label>
                             <textarea id="message" name="message" rows="5" required 
-                                      class="w-full p-3 rounded-md border border-gray-600 bg-dark-bg text-white focus:ring-2 focus:ring-magic-purple focus:border-magic-purple transition duration-200"></textarea>
+                                      class="w-full p-3 rounded-none border-2 border-purple-500 bg-dark-bg text-terminal-text focus:border-glow-green focus:outline-none transition duration-200 text-base"></textarea>
                         </div>
                         
-                        <button type="submit" class="w-full py-3 px-8 text-lg font-bold rounded-full bg-magic-purple text-dark-bg hover:bg-magic-purple/80 transition duration-300 shadow-lg shadow-magic-purple/30">
-                            SEND MESSAGE
+                        <button type="submit" class="w-full py-3 px-8 text-lg font-pixel terminal-button text-dark-bg bg-glow-green">
+                            SEND [TRANSMIT]
                         </button>
                     </form>
                 </div>
@@ -201,14 +225,14 @@
     </main>
 
     <!-- Footer and Social Links -->
-    <footer class="mt-16 py-8 border-t border-gray-700/50 text-center text-gray-500 text-sm bg-dark-bg">
+    <footer class="mt-16 py-8 border-t border-glow-green/50 text-center text-gray-500 text-xs bg-dark-bg">
         <div class="container mx-auto px-4">
-            <div class="flex justify-center space-x-6 text-2xl mb-4">
-                <a href="#" class="text-gray-400 hover:text-magic-purple transition duration-300"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-gray-400 hover:text-magic-purple transition duration-300"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-gray-400 hover:text-magic-purple transition duration-300"><i class="fas fa-envelope"></i></a>
+            <div class="flex justify-center space-x-6 text-xl mb-4">
+                <a href="#" class="text-gray-400 hover:text-magic-purple transition duration-300 text-shadow-purple"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-magic-purple transition duration-300 text-shadow-purple"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-magic-purple transition duration-300 text-shadow-purple"><i class="fas fa-envelope"></i></a>
             </div>
-            <p>Designed and built by Nizar Karroud. &copy; 2025</p>
+            <p class="font-pixel">COPYRIGHT NIZAR KARROUD. &lt;2025&gt;</p>
         </div>
     </footer>
 
